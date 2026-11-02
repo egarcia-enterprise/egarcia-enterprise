@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrique García | Senior Enterprise AE & Technical Sales Hub</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                        },
+                        indigoBrand: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        },
+                        darkBg: '#0b0f19',
+                        darkCard: '#111827',
+                        darkBorder: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-chat {
+            background: rgba(17, 24, 39, 0.95);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(99, 102, 241, 0.3);
+        }
+        .tab-active {
+            border-bottom: 2px solid #6366f1;
+            color: #818cf8;
+            background: rgba(99, 102, 241, 0.1);
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 w-full glass-panel border-b border-gray-800 px-4 lg:px-8 py-3">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-emerald-500 flex items-center justify-center font-bold text-white shadow-lg shadow-indigo-500/20">
+                    EG
+                </div>
+                <div>
+                    <h1 class="text-base font-bold text-gray-100 leading-tight">Enrique García</h1>
+                    <p class="text-xs text-indigo-400 font-medium">Senior Enterprise AE | Technical Challenger</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <a href="https://linkedin.com/in/enriquegarciacollado" target="_blank" rel="noopener noreferrer" 
+                   class="hidden sm:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-800 hover:bg-gray-700 text-gray-200 transition-colors border border-gray-700">
+                    <i class="fab fa-linkedin text-blue-400"></i>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="mailto:jose.enrique.garcia.collado@gmail.com" 
+                   class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md shadow-indigo-600/30">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>Contacto Directo</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO / EXECUTIVE PROFILE SUMMARY -->
+    <section class="max-w-7xl mx-auto px-4 lg:px-8 pt-8 pb-6 w-full">
+        <div class="glass-panel rounded-2xl p-6 lg:p-8 relative overflow-hidden">
+            <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-16 -top-16 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+                <!-- Main Bio -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Ex-Google (7+ Años) | Portfolio €70M+ Enterprise Retail
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+                        Value Selling & Sales Engineering Hub
+                    </h2>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Especialista en la aceleración de cuentas Enterprise para plataformas SaaS de alta tecnología (Fintech, API Infrastructure & AI). Combino el rigor metodológico de <strong class="text-white">MEDDPICC</strong> con la capacidad técnica de construir <strong class="text-white">Simuladores interactivos de ROI en vivo</strong> para C-Level (CFO, CTO, E-commerce Directors).
+                    </p>
+                    
+                    <!-- Core Highlights -->
+                    <div class="grid grid-cols-3 gap-3 pt-2">
+                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+                            <span class="block text-xl font-bold text-indigo-400">€70M+</span>
+                            <span class="text-[11px] text-gray-400">ARR Gestionado</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+                            <span class="block text-xl font-bold text-emerald-400">MEDDPICC</span>
+                            <span class="text-[11px] text-gray-400">Ejecución Deal Structuring</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-gray-900/60 border border-gray-800 text-center">
+                            <span class="block text-xl font-bold text-purple-400">Full-Stack</span>
+                            <span class="text-[11px] text-gray-400">Sales Engineering PoCs</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Target Fit -->
+                <div class="p-5 rounded-xl bg-gray-900/80 border border-indigo-500/20 space-y-3">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-indigo-400 flex items-center gap-2">
+                        <i class="fas fa-bullseye"></i> Target Specific Value Proposition
+                    </h3>
+                    <ul class="space-y-2 text-xs text-gray-300">
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-emerald-400 mt-0.5"></i>
+                            <span><strong>Alma (Fintech):</strong> Modelado de AOV, checkout conversion & estacionalidad Q4.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-indigo-400 mt-0.5"></i>
+                            <span><strong>Kong (Infra):</strong> Latencia sub-milisegundo, API Gateways & TCO microservicios.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <i class="fas fa-check-circle text-purple-400 mt-0.5"></i>
+                            <span><strong>Harvey (Legal AI):</strong> ROI agéntico y optimización de revisión documental.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE SHOWROOM (TABS FOR INTERACTIVE POCs) -->
+    <main class="max-w-7xl mx-auto px-4 lg:px-8 py-4 w-full flex-grow">
+        <div class="glass-panel rounded-2xl border border-gray-800 overflow-hidden flex flex-col h-[750px]">
+            
+            <!-- Tab Controls -->
+            <div class="flex items-center justify-between border-b border-gray-800 bg-gray-950/80 px-4 overflow-x-auto">
+                <div class="flex space-x-1" id="pocTabs">
+                    <button onclick="switchTab('alma')" id="tab-alma" 
+                            class="tab-button tab-active flex items-center gap-2 px-4 py-3 text-xs font-semibold transition-all whitespace-nowrap">
+                        <i class="fas fa-credit-card text-emerald-400"></i>
+                        <span>Alma BNPL Simulator</span>
+                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-1.5 py-0.5 rounded-full">Fintech</span>
+                    </button>
+
+                    <button onclick="switchTab('kong')" id="tab-kong" 
+                            class="tab-button flex items-center gap-2 px-4 py-3 text-xs font-semibold text-gray-400 hover:text-gray-200 transition-all whitespace-nowrap">
+                        <i class="fas fa-network-wired text-indigo-400"></i>
+                        <span>Kong API Gateway PoC</span>
+                        <span class="text-[10px] bg-indigo-500/20 text-indigo-300 px-1.5 py-0.5 rounded-full">Infra</span>
+                    </button>
+
+                    <button onclick="switchTab('harvey')" id="tab-harvey" 
+                            class="tab-button flex items-center gap-2 px-4 py-3 text-xs font-semibold text-gray-400 hover:text-gray-200 transition-all whitespace-nowrap">
+                        <i class="fas fa-robot text-purple-400"></i>
+                        <span>Harvey Legal AI ROI</span>
+                        <span class="text-[10px] bg-purple-500/20 text-purple-300 px-1.5 py-0.5 rounded-full">AI Agentic</span>
+                    </button>
+                </div>
+
+                <div class="hidden md:flex items-center gap-2 text-xs text-gray-400 px-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    <span>Live Interactive Demo Mode</span>
+                </div>
+            </div>
+
+            <!-- Tab Content Area -->
+            <div class="flex-grow relative bg-gray-950">
+                
+                <!-- Alma Simulator Iframe -->
+                <div id="content-alma" class="tab-content w-full h-full">
+                    <iframe src="https://egarcia-enterprise.github.io/alma-enterprise-simulator/" 
+                            class="w-full h-full border-0" 
+                            title="Alma Enterprise Simulator"
+                            loading="lazy"></iframe>
+                </div>
+
+                <!-- Kong PoC Iframe -->
+                <div id="content-kong" class="tab-content hidden w-full h-full">
+                    <iframe src="https://egarcia-enterprise.github.io/kong-poc/" 
+                            class="w-full h-full border-0" 
+                            title="Kong API Gateway Simulator"
+                            loading="lazy"></iframe>
+                </div>
+
+                <!-- Harvey Legal AI ROI Calculator (Native Interactive Component) -->
+                <div id="content-harvey" class="tab-content hidden w-full h-full p-6 overflow-y-auto bg-gray-900/90 text-gray-200">
+                    <div class="max-w-4xl mx-auto space-y-6">
+                        <div class="border-b border-gray-800 pb-4 flex justify-between items-center">
+                            <div>
+                                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                                    <i class="fas fa-scale-balanced text-purple-400"></i>
+                                    Harvey AI — Legal Document Processing & Risk Automation ROI
+                                </h3>
+                                <p class="text-xs text-gray-400 mt-1">Calculadora de impacto económico para Direcciones Jurídicas y Despachos Tier-1.</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-300 border border-purple-500/30">Enterprise AI Model</span>
+                        </div>
+
+                        <!-- Interactive Form -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-4 bg-gray-950 p-5 rounded-xl border border-gray-800">
+                                <h4 class="text-xs font-bold uppercase text-purple-400 tracking-wider">Parámetros de la Cuenta</h4>
+                                
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1">Abogados / Paralegals en Plantilla:</label>
+                                    <input type="number" id="lawyersCount" value="45" oninput="calculateHarveyROI()" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-sm text-white focus:border-purple-500 focus:outline-none">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1">Coste Medio Hora (€):</label>
+                                    <input type="number" id="hourlyRate" value="120" oninput="calculateHarveyROI()" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-sm text-white focus:border-purple-500 focus:outline-none">
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-medium text-gray-300 mb-1">Horas Semanales en Revisión Documental / Due Diligence:</label>
+                                    <input type="number" id="reviewHours" value="18" oninput="calculateHarveyROI()" class="w-full bg-gray-900 border border-gray-700 rounded-lg p-2 text-sm text-white focus:border-purple-500 focus:outline-none">
+                                </div>
+                            </div>
+
+                            <!-- ROI Output Box -->
+                            <div class="bg-gradient-to-br from-purple-900/30 to-indigo-900/30 p-5 rounded-xl border border-purple-500/30 flex flex-col justify-between">
+                                <h4 class="text-xs font-bold uppercase text-purple-300 tracking-wider">Impacto Anual Estimado con Harvey AI</h4>
+                                
+                                <div class="space-y-4 my-4">
+                                    <div>
+                                        <span class="text-xs text-gray-400">Horas Eficientes Ahorradas Anuales:</span>
+                                        <div class="text-2xl font-black text-white" id="harveyHoursSaved">21,060 hrs</div>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs text-gray-400">Ahorro Directo de Capacidad Operativa:</span>
+                                        <div class="text-3xl font-black text-emerald-400" id="harveyCostSaved">€1,516,320</div>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs text-gray-400">Aceleración en Tiempo de Respuesta (SLA Deal Closure):</span>
+                                        <div class="text-lg font-bold text-purple-300">65% más rápido</div>
+                                    </div>
+                                </div>
+
+                                <div class="p-3 bg-purple-950/60 rounded-lg border border-purple-800/40 text-[11px] text-gray-300">
+                                    <i class="fas fa-lightbulb text-purple-400 mr-1"></i>
+                                    <strong>Value Selling pitch:</strong> Harvey no reemplaza abogados; incrementa el ratio de acuerdos cerrados por trimestre eliminando el cuello de botella en Due Diligence.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="max-w-7xl mx-auto px-4 lg:px-8 py-4 w-full text-center text-xs text-gray-500">
+        <p>© 2026 Enrique García — Portfolio & Interactive Sales Engineering Hub. Built for High-Growth Enterprise SaaS Application.</p>
+    </footer>
+
+    <!-- AGENTIC AI ASSISTANT (WIDGET FLOTANTE) -->
+    <div id="aiAgentWidget" class="fixed bottom-4 right-4 z-50 flex flex-col items-end">
+        
+        <!-- Chat Window -->
+        <div id="chatWindow" class="hidden w-[90vw] sm:w-[380px] h-[480px] glass-chat rounded-2xl shadow-2xl flex flex-col mb-3 overflow-hidden transition-all duration-300">
+            
+            <!-- Agent Header -->
+            <div class="p-3 bg-gradient-to-r from-indigo-900/90 to-gray-900 border-b border-indigo-500/30 flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="relative">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-500 to-emerald-400 flex items-center justify-center text-white text-xs font-bold">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border-2 border-gray-900"></span>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-bold text-white flex items-center gap-1.5">
+                            Enrique AI Copilot
+                            <span class="text-[9px] bg-indigo-500/30 text-indigo-200 px-1 rounded">Agentic</span>
+                        </h4>
+                        <p class="text-[10px] text-gray-300">Asistente Ejecutivo & NAVEGADOR DEL PORTAL</p>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-gray-400 hover:text-white p-1">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages Log -->
+            <div id="chatLog" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs">
+                <!-- Bot Welcome Message -->
+                <div class="flex gap-2">
+                    <div class="w-6 h-6 rounded-full bg-indigo-600/40 flex items-center justify-center text-indigo-300 text-[10px] shrink-0 mt-0.5">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="bg-gray-800/90 text-gray-200 p-3 rounded-xl rounded-tl-none border border-gray-700/60 max-w-[85%] space-y-1">
+                        <p><strong>¡Hola! Soy Enrique AI Copilot.</strong></p>
+                        <p class="text-gray-300">Puedo responder preguntas sobre el perfil comercial de Enrique y <strong>controlar la pantalla en tiempo real</strong> para mostrarte sus demos.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Action Pills -->
+            <div class="px-3 py-2 bg-gray-950/60 border-t border-gray-800/60 flex flex-wrap gap-1.5">
+                <button onclick="askAgent('Resúmeme el perfil de Enrique')" class="px-2 py-1 rounded-md bg-gray-800 hover:bg-gray-700 text-gray-300 text-[10px] border border-gray-700 transition">
+                    👤 Resumen Perfil
+                </button>
+                <button onclick="askAgent('Muestra la demo de Alma BNPL')" class="px-2 py-1 rounded-md bg-emerald-950 hover:bg-emerald-900 text-emerald-300 text-[10px] border border-emerald-800/50 transition">
+                    💳 Demo Alma
+                </button>
+                <button onclick="askAgent('Carga el PoC de Kong')" class="px-2 py-1 rounded-md bg-indigo-950 hover:bg-indigo-900 text-indigo-300 text-[10px] border border-indigo-800/50 transition">
+                    🌐 PoC Kong
+                </button>
+                <button onclick="askAgent('¿Cómo aplica MEDDPICC?')" class="px-2 py-1 rounded-md bg-purple-950 hover:bg-purple-900 text-purple-300 text-[10px] border border-purple-800/50 transition">
+                    🎯 MEDDPICC
+                </button>
+            </div>
+
+            <!-- Input Bar -->
+            <div class="p-2.5 bg-gray-950 border-t border-gray-800 flex items-center gap-2">
+                <input type="text" id="userInput" onkeypress="handleKeyPress(event)" 
+                       placeholder="Escribe o pide cambiar de demo..." 
+                       class="flex-grow bg-gray-900 border border-gray-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-indigo-500">
+                <button onclick="sendMessage()" class="p-1.5 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg transition">
+                    <i class="fas fa-arrow-up text-xs px-1"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Button Trigger -->
+        <button onclick="toggleChat()" class="group relative flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-emerald-500 hover:from-indigo-500 hover:to-emerald-400 text-white font-semibold px-4 py-3 rounded-full shadow-lg shadow-indigo-500/30 transition-all duration-300">
+            <i class="fas fa-sparkles animate-pulse"></i>
+            <span class="text-xs">Hablar con Enrique AI</span>
+            <span class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-gray-900"></span>
+        </button>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Tab switching logic
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active classes from buttons
+            document.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('tab-active');
+                btn.classList.add('text-gray-400');
+            });
+
+            // Show target content
+            const targetContent = document.getElementById(`content-${tabId}`);
+            if(targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+
+            // Activate button styling
+            const targetBtn = document.getElementById(`tab-${tabId}`);
+            if(targetBtn) {
+                targetBtn.classList.add('tab-active');
+                targetBtn.classList.remove('text-gray-400');
+            }
+        }
+
+        // Harvey ROI Calculator
+        function calculateHarveyROI() {
+            const lawyers = parseFloat(document.getElementById('lawyersCount').value) || 0;
+            const rate = parseFloat(document.getElementById('hourlyRate').value) || 0;
+            const hours = parseFloat(document.getElementById('reviewHours').value) || 0;
+
+            // Assumptions: 48 working weeks per year, 50% efficiency gain with Harvey AI
+            const annualHoursInReview = lawyers * hours * 48;
+            const hoursSaved = Math.round(annualHoursInReview * 0.5);
+            const costSaved = Math.round(hoursSaved * rate);
+
+            document.getElementById('harveyHoursSaved').innerText = hoursSaved.toLocaleString('es-ES') + ' hrs';
+            document.getElementById('harveyCostSaved').innerText = '€' + costSaved.toLocaleString('es-ES');
+        }
+
+        // Toggle Chat Window
+        function toggleChat() {
+            const chatWin = document.getElementById('chatWindow');
+            chatWin.classList.toggle('hidden');
+        }
+
+        // Agentic Chatbot Logic
+        function askAgent(text) {
+            document.getElementById('userInput').value = text;
+            sendMessage();
+        }
+
+        function handleKeyPress(e) {
+            if(e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('userInput');
+            const query = input.value.trim();
+            if(!query) return;
+
+            const chatLog = document.getElementById('chatLog');
+
+            // Render User Message
+            const userMsgHtml = `
+                <div class="flex gap-2 justify-end">
+                    <div class="bg-indigo-600/90 text-white p-2.5 rounded-xl rounded-tr-none max-w-[85%]">
+                        ${escapeHtml(query)}
+                    </div>
+                </div>
+            `;
+            chatLog.insertAdjacentHTML('beforeend', userMsgHtml);
+            input.value = '';
+            chatLog.scrollTop = chatLog.scrollHeight;
+
+            // Generate Agentic Response & DOM Manipulation
+            setTimeout(() => {
+                let response = "";
+                const lowerQuery = query.toLowerCase();
+
+                // AGENTIC ACTIONS & RESPONSES
+                if (lowerQuery.includes('alma') || lowerQuery.includes('bnpl') || lowerQuery.includes('pago')) {
+                    switchTab('alma');
+                    response = "🎯 <strong>Acción Agéntica:</strong> He cambiado la pantalla al <strong>Simulador Enterprise de Alma</strong>.<br><br>Enrique ha diseñado esta herramienta para calcular el incremento de AOV y el impacto de la estacionalidad de Q4 para grandes clientes de retail.";
+                } 
+                else if (lowerQuery.includes('kong') || lowerQuery.includes('api') || lowerQuery.includes('gateway') || lowerQuery.includes('infra')) {
+                    switchTab('kong');
+                    response = "⚡ <strong>Acción Agéntica:</strong> Te he llevado al <strong>PoC de Kong API Gateway</strong>.<br><br>Este modelo simula tráfico de microservicios en tiempo real y demuestra cómo reducir el TCO y mantener una latencia inferior a 1ms a escala Enterprise.";
+                } 
+                else if (lowerQuery.includes('harvey') || lowerQuery.includes('legal') || lowerQuery.includes('ia') || lowerQuery.includes('ai')) {
+                    switchTab('harvey');
+                    response = "⚖️ <strong>Acción Agéntica:</strong> Cargando el módulo de <strong>Harvey AI ROI Calculator</strong>.<br><br>Aquí puedes ajustar el tamaño de la firma de abogados para cuantificar las horas ahorradas en Due Diligence y contratos.";
+                } 
+                else if (lowerQuery.includes('meddpicc') || lowerQuery.includes('ventas') || lowerQuery.includes('metodologia')) {
+                    response = "📋 <strong>Cultura de Cierre MEDDPICC:</strong><br>Enrique aplica un rigor absoluto: identifica al <em>Economic Buyer</em> en fases tempranas, cuantifica las <em>Metrics</em> financieras (como ves en los simuladores) y construye <em>Champions</em> técnicos internos antes del proceso formal de RFP.";
+                } 
+                else if (lowerQuery.includes('perfil') || lowerQuery.includes('resumen') || lowerQuery.includes('quien') || lowerQuery.includes('enrique')) {
+                    response = "💼 <strong>Trayectoria Ejecutiva:</strong><br>• 7+ años en Google gestionando carteras de €70M+ en Retail.<br>• Rotación técnica en VirusTotal / GTI (APIs & Security).<br>• Perfil 'Technical Challenger': une el discurso comercial C-Level con la capacidad de programar maquetas técnicas.";
+                } 
+                else {
+                    response = "Entendido. Enrique combina la gestión de grandes cuentas con fluidez técnica. ¿Quieres que te muestre la demo de <strong>Alma (Fintech)</strong>, <strong>Kong (API Gateway)</strong> o profundizar en su metodología <strong>MEDDPICC</strong>?";
+                }
+
+                // Render Bot Message
+                const botMsgHtml = `
+                    <div class="flex gap-2">
+                        <div class="w-6 h-6 rounded-full bg-indigo-600/40 flex items-center justify-center text-indigo-300 text-[10px] shrink-0 mt-0.5">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="bg-gray-800/90 text-gray-200 p-3 rounded-xl rounded-tl-none border border-gray-700/60 max-w-[85%] space-y-1">
+                            ${response}
+                        </div>
+                    </div>
+                `;
+                chatLog.insertAdjacentHTML('beforeend', botMsgHtml);
+                chatLog.scrollTop = chatLog.scrollHeight;
+            }, 400);
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // Initialize default view
+        window.onload = function() {
+            calculateHarveyROI();
+        };
+    </script>
+</body>
+</html>
