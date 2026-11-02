@@ -136,10 +136,10 @@
                 <!-- TAB BUTTONS -->
                 <div class="flex justify-center mb-8 overflow-x-auto pb-2">
                     <div class="bg-cardBg p-1.5 rounded-xl border border-gray-800 inline-flex space-x-2">
-                        <button onclick="switchTab('alma')" id="btn-alma" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition bg-indigo-600 text-white shadow">
+                        <button onclick="switchTab('fintech')" id="btn-fintech" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition bg-indigo-600 text-white shadow">
                             <i class="fa-solid fa-credit-card mr-2"></i>Fintech / BNPL
                         </button>
-                        <button onclick="switchTab('kong')" id="btn-kong" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
+                        <button onclick="switchTab('infra')" id="btn-infra" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
                             <i class="fa-solid fa-network-wired mr-2"></i>API Gateway / Infra
                         </button>
                         <button onclick="switchTab('legal')" id="btn-legal" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
@@ -151,8 +151,8 @@
                 <!-- TAB CONTENT CONTAINER -->
                 <div class="bg-cardBg rounded-2xl border border-gray-800 overflow-hidden shadow-2xl">
                     
-                    <!-- ALMA TAB PANE -->
-                    <div id="pane-alma" class="tab-pane">
+                    <!-- FINTECH TAB PANE -->
+                    <div id="pane-fintech" class="tab-pane">
                         <div class="p-4 bg-gray-800/40 border-b border-gray-800 flex items-center justify-between flex-wrap gap-4">
                             <div>
                                 <h3 class="font-bold text-white text-lg">Fintech Conversion & AOV Uplift Simulator</h3>
@@ -168,8 +168,8 @@
                         </div>
                     </div>
 
-                    <!-- KONG TAB PANE -->
-                    <div id="pane-kong" class="tab-pane hidden">
+                    <!-- INFRASTRUCTURE TAB PANE -->
+                    <div id="pane-infra" class="tab-pane hidden">
                         <div class="p-4 bg-gray-800/40 border-b border-gray-800 flex items-center justify-between flex-wrap gap-4">
                             <div>
                                 <h3 class="font-bold text-white text-lg">API Gateway & Performance Simulator</h3>
@@ -185,26 +185,26 @@
                         </div>
                     </div>
 
-                    <!-- LEGAL AI OPS TAB PANE (Generic Sector-based) -->
+                    <!-- LEGAL AI OPS TAB PANE -->
                     <div id="pane-legal" class="tab-pane hidden">
                         <div class="p-4 bg-gray-800/40 border-b border-gray-800 flex items-center justify-between flex-wrap gap-4">
                             <div>
-                                <h3 class="font-bold text-white text-lg">Legal AI Operations & Workflow ROI Calculator</h3>
-                                <p class="text-xs text-gray-400">Simulates billable hour efficiency, contract review acceleration, and enterprise legal ops adoption metrics.</p>
+                                <h3 class="font-bold text-white text-lg">Legal AI Operations & Due Diligence ROI Calculator</h3>
+                                <p class="text-xs text-gray-400">Simulates how AI accelerates document review, reduces due diligence friction, and unlocks strategic growth without headcount trade-offs.</p>
                             </div>
                             <span class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-800 px-3 py-1.5 rounded-lg">
                                 Interactive Sector PoC
                             </span>
                         </div>
-                        <!-- Embedded interactive mock calculator for Legal AI sector -->
+                        <!-- Interactive mock calculator for Legal AI sector -->
                         <div class="p-8 sm:p-12 bg-cardBg min-h-[750px] flex flex-col justify-center items-center">
                             <div class="max-w-2xl w-full bg-gray-900 border border-gray-800 p-8 rounded-2xl shadow-xl space-y-6">
                                 <div class="text-center">
                                     <div class="w-12 h-12 bg-indigo-950 border border-indigo-800 rounded-xl flex items-center justify-center mx-auto mb-4 text-indigo-400 text-xl">
                                         <i class="fa-solid fa-scale-balanced"></i>
                                     </div>
-                                    <h3 class="text-2xl font-bold text-white">Legal Operations ROI Estimator</h3>
-                                    <p class="text-sm text-gray-400 mt-1">Quantify efficiency gains for enterprise legal departments.</p>
+                                    <h3 class="text-2xl font-bold text-white">Legal Due Diligence Efficiency Estimator</h3>
+                                    <p class="text-sm text-gray-400 mt-1">AI does not replace attorneys; it unlocks capacity, accelerates contract review, and wins deals through time saved.</p>
                                 </div>
                                 <div class="space-y-4">
                                     <div>
@@ -218,11 +218,11 @@
                                 </div>
                                 <div class="border-t border-gray-800 pt-6 mt-6 grid grid-cols-2 gap-4 text-center">
                                     <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700/50">
-                                        <span class="block text-xs text-gray-400 mb-1">Hours Saved / Month</span>
+                                        <span class="block text-xs text-gray-400 mb-1">Due Diligence Hours Saved / Mo</span>
                                         <span id="hours-saved" class="text-2xl font-extrabold text-indigo-400">400 hrs</span>
                                     </div>
                                     <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700/50">
-                                        <span class="block text-xs text-gray-400 mb-1">Estimated Annual Value</span>
+                                        <span class="block text-xs text-gray-400 mb-1">Estimated Annual Deal Value</span>
                                         <span id="annual-value" class="text-2xl font-extrabold text-emerald-400">€1,680,000</span>
                                     </div>
                                 </div>
@@ -250,14 +250,14 @@
                 btn.classList.add('text-gray-400');
             });
 
-            if(tabName === 'alma') {
-                document.getElementById('pane-alma').classList.remove('hidden');
-                const btn = document.getElementById('btn-alma');
+            if(tabName === 'fintech') {
+                document.getElementById('pane-fintech').classList.remove('hidden');
+                const btn = document.getElementById('btn-fintech');
                 btn.classList.add('bg-indigo-600', 'text-white', 'shadow');
                 btn.classList.remove('text-gray-400');
-            } else if(tabName === 'kong') {
-                document.getElementById('pane-kong').classList.remove('hidden');
-                const btn = document.getElementById('btn-kong');
+            } else if(tabName === 'infra') {
+                document.getElementById('pane-infra').classList.remove('hidden');
+                const btn = document.getElementById('btn-infra');
                 btn.classList.add('bg-indigo-600', 'text-white', 'shadow');
                 btn.classList.remove('text-gray-400');
             } else if(tabName === 'legal') {
@@ -271,7 +271,7 @@
         function calculateLegalROI() {
             const lawyers = parseFloat(document.getElementById('lawyers-input').value) || 0;
             const rate = parseFloat(document.getElementById('rate-input').value) || 0;
-            // Assuming 8 hours saved per lawyer per month via AI automation
+            // Assuming 8 hours saved per lawyer per month via AI due diligence automation
             const hoursSaved = lawyers * 8;
             const annualValue = hoursSaved * rate * 12;
 
