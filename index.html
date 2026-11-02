@@ -82,7 +82,7 @@
                         Enterprise Commercial Leadership & <span class="text-indigo-400">Technical Architecture</span>
                     </h1>
                     <p class="text-gray-300 text-lg sm:text-xl leading-relaxed mb-8">
-                        Senior Enterprise Account Executive leveraging a <strong>Technical Challenger</strong> approach. Bringing <strong>4+ years managing €70M+ Enterprise portfolios</strong>, combining rigorous MEDDPICC execution with hands-on development of live financial, API, and workflow automation simulators.
+                        Senior Enterprise Account Executive leveraging a <strong>Technical Challenger</strong> approach. Bringing <strong>4+ years managing €70M+ Enterprise portfolios</strong>, combining rigorous MEDDPICC execution with hands-on development of live financial, API, and transaction simulators.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="#showroom" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg shadow-indigo-600/30 transition flex items-center space-x-2">
@@ -129,7 +129,7 @@
                 <div class="text-center max-w-3xl mx-auto mb-10">
                     <h2 class="text-3xl font-bold text-white mb-4">Live Enterprise PoC Showroom</h2>
                     <p class="text-gray-400">
-                        Explore fully functional, interactive simulators built to quantify business cases, S-curve adoption, and efficiency gains for high-growth SaaS, Fintech, and AI verticals.
+                        Explore fully functional, interactive simulators built to quantify business cases, API routing performance, and transactional workflows.
                     </p>
                 </div>
 
@@ -144,6 +144,9 @@
                         </button>
                         <button onclick="switchTab('legal')" id="btn-legal" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
                             <i class="fa-solid fa-scale-balanced mr-2"></i>Legal AI Operations
+                        </button>
+                        <button onclick="switchTab('gateway')" id="btn-gateway" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
+                            <i class="fa-solid fa-terminal mr-2"></i>Payment Gateway Sandbox
                         </button>
                     </div>
                 </div>
@@ -190,13 +193,10 @@
                         <div class="p-4 bg-gray-800/40 border-b border-gray-800 flex items-center justify-between flex-wrap gap-4">
                             <div>
                                 <h3 class="font-bold text-white text-lg">Legal AI Operations & Due Diligence ROI Calculator</h3>
-                                <p class="text-xs text-gray-400">Simulates how AI accelerates document review, reduces due diligence friction, and unlocks strategic growth without headcount trade-offs.</p>
+                                <p class="text-xs text-gray-400">Simulates how AI accelerates document review and unlocks strategic deal growth.</p>
                             </div>
-                            <span class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-800 px-3 py-1.5 rounded-lg">
-                                Interactive Sector PoC
-                            </span>
+                            <span class="text-xs bg-emerald-950 text-emerald-300 border border-emerald-800 px-3 py-1.5 rounded-lg">Interactive PoC</span>
                         </div>
-                        <!-- Interactive mock calculator for Legal AI sector -->
                         <div class="p-8 sm:p-12 bg-cardBg min-h-[750px] flex flex-col justify-center items-center">
                             <div class="max-w-2xl w-full bg-gray-900 border border-gray-800 p-8 rounded-2xl shadow-xl space-y-6">
                                 <div class="text-center">
@@ -204,7 +204,7 @@
                                         <i class="fa-solid fa-scale-balanced"></i>
                                     </div>
                                     <h3 class="text-2xl font-bold text-white">Legal Due Diligence Efficiency Estimator</h3>
-                                    <p class="text-sm text-gray-400 mt-1">AI does not replace attorneys; it unlocks capacity, accelerates contract review, and wins deals through time saved.</p>
+                                    <p class="text-sm text-gray-400 mt-1">AI unlocks capacity, accelerates contract review, and wins deals through time saved.</p>
                                 </div>
                                 <div class="space-y-4">
                                     <div>
@@ -218,12 +218,68 @@
                                 </div>
                                 <div class="border-t border-gray-800 pt-6 mt-6 grid grid-cols-2 gap-4 text-center">
                                     <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700/50">
-                                        <span class="block text-xs text-gray-400 mb-1">Due Diligence Hours Saved / Mo</span>
+                                        <span class="block text-xs text-gray-400 mb-1">Hours Saved / Month</span>
                                         <span id="hours-saved" class="text-2xl font-extrabold text-indigo-400">400 hrs</span>
                                     </div>
                                     <div class="bg-gray-800/50 p-4 rounded-xl border border-gray-700/50">
-                                        <span class="block text-xs text-gray-400 mb-1">Estimated Annual Deal Value</span>
+                                        <span class="block text-xs text-gray-400 mb-1">Estimated Annual Value</span>
                                         <span id="annual-value" class="text-2xl font-extrabold text-emerald-400">€1,680,000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PAYMENT GATEWAY SANDBOX TAB PANE -->
+                    <div id="pane-gateway" class="tab-pane hidden">
+                        <div class="p-4 bg-gray-800/40 border-b border-gray-800 flex items-center justify-between flex-wrap gap-4">
+                            <div>
+                                <h3 class="font-bold text-white text-lg">Enterprise Payment Gateway Sandbox</h3>
+                                <p class="text-xs text-gray-400">Simulate low-latency transaction processing, multi-currency routing, and API response payloads.</p>
+                            </div>
+                            <span class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800 px-3 py-1.5 rounded-lg">Live API Simulator</span>
+                        </div>
+                        <div class="p-8 sm:p-12 bg-cardBg min-h-[750px] flex flex-col justify-center items-center">
+                            <div class="max-w-3xl w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <!-- Transaction Form -->
+                                <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow-xl space-y-4">
+                                    <h4 class="font-bold text-white text-base flex items-center">
+                                        <i class="fa-solid fa-credit-card mr-2 text-indigo-400"></i> Mock Transaction Input
+                                    </h4>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1">Amount (€)</label>
+                                        <input type="number" id="tx-amount" value="1250.00" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wider mb-1">Payment Method</label>
+                                        <select id="tx-method" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-indigo-500">
+                                            <option value="card">Enterprise Credit Card (Visa/MC)</option>
+                                            <option value="bnpl">Flexible Installments (BNPL)</option>
+                                            <option value="sepa">SEPA Instant Transfer</option>
+                                        </select>
+                                    </div>
+                                    <button onclick="simulatePayment()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 rounded-lg text-sm transition shadow-md shadow-indigo-600/30">
+                                        Process Transaction API
+                                    </button>
+                                </div>
+                                <!-- API Response Box -->
+                                <div class="bg-gray-900 border border-gray-800 p-6 rounded-2xl shadow-xl space-y-3 flex flex-col justify-between">
+                                    <div>
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h4 class="font-bold text-white text-base flex items-center">
+                                                <i class="fa-solid fa-code mr-2 text-emerald-400"></i> API Response Output
+                                            </h4>
+                                            <span id="api-status" class="text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800">Ready</span>
+                                        </div>
+                                        <pre id="api-json" class="bg-black/60 p-3 rounded-lg text-xs text-indigo-300 font-mono overflow-x-auto h-40 border border-gray-800">{
+  "status": "ready",
+  "gateway_latency_ms": null,
+  "transaction_id": null
+}</pre>
+                                    </div>
+                                    <div class="text-xs text-gray-400 border-t border-gray-800 pt-3 flex justify-between">
+                                        <span>Target SLA: &lt;120ms</span>
+                                        <span id="latency-metric" class="text-gray-300 font-semibold">-</span>
                                     </div>
                                 </div>
                             </div>
@@ -252,31 +308,66 @@
 
             if(tabName === 'fintech') {
                 document.getElementById('pane-fintech').classList.remove('hidden');
-                const btn = document.getElementById('btn-fintech');
-                btn.classList.add('bg-indigo-600', 'text-white', 'shadow');
-                btn.classList.remove('text-gray-400');
+                document.getElementById('btn-fintech').classList.add('bg-indigo-600', 'text-white', 'shadow');
+                document.getElementById('btn-fintech').classList.remove('text-gray-400');
             } else if(tabName === 'infra') {
                 document.getElementById('pane-infra').classList.remove('hidden');
-                const btn = document.getElementById('btn-infra');
-                btn.classList.add('bg-indigo-600', 'text-white', 'shadow');
-                btn.classList.remove('text-gray-400');
+                document.getElementById('btn-infra').classList.add('bg-indigo-600', 'text-white', 'shadow');
+                document.getElementById('btn-infra').classList.remove('text-gray-400');
             } else if(tabName === 'legal') {
                 document.getElementById('pane-legal').classList.remove('hidden');
-                const btn = document.getElementById('btn-legal');
-                btn.classList.add('bg-indigo-600', 'text-white', 'shadow');
-                btn.classList.remove('text-gray-400');
+                document.getElementById('btn-legal').classList.add('bg-indigo-600', 'text-white', 'shadow');
+                document.getElementById('btn-legal').classList.remove('text-gray-400');
+            } else if(tabName === 'gateway') {
+                document.getElementById('pane-gateway').classList.remove('hidden');
+                document.getElementById('btn-gateway').classList.add('bg-indigo-600', 'text-white', 'shadow');
+                document.getElementById('btn-gateway').classList.remove('text-gray-400');
             }
         }
 
         function calculateLegalROI() {
             const lawyers = parseFloat(document.getElementById('lawyers-input').value) || 0;
             const rate = parseFloat(document.getElementById('rate-input').value) || 0;
-            // Assuming 8 hours saved per lawyer per month via AI due diligence automation
             const hoursSaved = lawyers * 8;
             const annualValue = hoursSaved * rate * 12;
 
             document.getElementById('hours-saved').innerText = hoursSaved.toLocaleString() + ' hrs';
             document.getElementById('annual-value').innerText = '€' + annualValue.toLocaleString();
+        }
+
+        function simulatePayment() {
+            const amount = document.getElementById('tx-amount').value;
+            const method = document.getElementById('tx-method').value;
+            const statusBadge = document.getElementById('api-status');
+            const jsonOutput = document.getElementById('api-json');
+            const latencyMetric = document.getElementById('latency-metric');
+
+            statusBadge.innerText = 'Processing...';
+            statusBadge.className = 'text-xs px-2 py-0.5 rounded bg-amber-950 text-amber-300 border border-amber-800';
+
+            setTimeout(() => {
+                const latency = Math.floor(Math.random() * 40) + 45; // Simulated latency between 45ms and 85ms
+                const txId = 'tx_' + Math.random().toString(36).substring(2, 10);
+                
+                statusBadge.innerText = '200 OK';
+                statusBadge.className = 'text-xs px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 border border-emerald-800';
+                
+                latencyMetric.innerText = latency + 'ms (Optimal)';
+                
+                const responseObj = {
+                    status: "success",
+                    code: 200,
+                    transaction_id: txId,
+                    amount: parseFloat(amount),
+                    currency: "EUR",
+                    payment_method: method,
+                    gateway_latency_ms: latency,
+                    fraud_score: 0.012,
+                    timestamp: new Date().toISOString()
+                };
+
+                jsonOutput.innerText = JSON.stringify(responseObj, null, 2);
+            }, 400);
         }
     </script>
 </body>
