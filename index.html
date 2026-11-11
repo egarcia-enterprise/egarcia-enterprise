@@ -139,6 +139,9 @@
                         <button onclick="switchTab('fintech')" id="btn-fintech" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition bg-indigo-600 text-white shadow">
                             <i class="fa-solid fa-credit-card mr-2"></i>Fintech / BNPL
                         </button>
+                        <button onclick="switchTab('resolvedesk')" id="btn-resolvedesk" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
+                            <i class="fa-solid fa-robot mr-2"></i>ResolveDesk AI (Agentic CX)
+                        </button>
                         <button onclick="switchTab('infra')" id="btn-infra" class="tab-btn px-4 py-2.5 rounded-lg text-sm font-semibold transition text-gray-400 hover:text-white">
                             <i class="fa-solid fa-network-wired mr-2"></i>API Gateway / Infra
                         </button>
@@ -168,6 +171,29 @@
                         </div>
                         <div class="iframe-container">
                             <iframe src="https://egarcia-enterprise.github.io/alma-enterprise-simulator/" title="Fintech Simulator"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- RESOLVEDESK AI TAB PANE -->
+                    <div id="pane-resolvedesk" class="tab-pane hidden">
+                        <div class="p-4 bg-gray-800/40 border-b border-gray-800 flex items-center justify-between flex-wrap gap-4">
+                            <div>
+                                <h3 class="font-bold text-white text-lg">ResolveDesk AI — Multi-Tenant Agentic CX & Operations Workspace</h3>
+                                <p class="text-xs text-gray-400">Full-Stack SaaS PoC (Next.js / TypeScript / SQLite) featuring tenant isolation, GDPR PII redaction, AI intent triage, 1-click Agent Copilot, and live SQL inspection.</p>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="https://github.com/egarcia-enterprise/resolvedesk-ai-" target="_blank" class="text-xs bg-gray-900 text-gray-200 border border-gray-700 px-3 py-1.5 rounded-lg hover:bg-gray-800 transition flex items-center space-x-1.5">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span>GitHub Repo</span>
+                                </a>
+                                <a href="https://egarcia-enterprise.github.io/resolvedesk-ai-/" target="_blank" class="text-xs bg-indigo-950 text-indigo-300 border border-indigo-800 px-3 py-1.5 rounded-lg hover:bg-indigo-900 transition flex items-center space-x-1.5">
+                                    <span>Open Full Screen</span>
+                                    <i class="fa-solid fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="iframe-container">
+                            <iframe src="https://egarcia-enterprise.github.io/resolvedesk-ai-/" title="ResolveDesk AI Simulator"></iframe>
                         </div>
                     </div>
 
@@ -369,6 +395,10 @@
                 document.getElementById('pane-fintech').classList.remove('hidden');
                 document.getElementById('btn-fintech').classList.add('bg-indigo-600', 'text-white', 'shadow');
                 document.getElementById('btn-fintech').classList.remove('text-gray-400');
+            } else if(tabName === 'resolvedesk') {
+                document.getElementById('pane-resolvedesk').classList.remove('hidden');
+                document.getElementById('btn-resolvedesk').classList.add('bg-indigo-600', 'text-white', 'shadow');
+                document.getElementById('btn-resolvedesk').classList.remove('text-gray-400');
             } else if(tabName === 'infra') {
                 document.getElementById('pane-infra').classList.remove('hidden');
                 document.getElementById('btn-infra').classList.add('bg-indigo-600', 'text-white', 'shadow');
