@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EG AI & SaaS Studio — Arquitectura de Agentes IA, Automatización B2B & Prototipado SaaS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #060B14;
+      color: #F8FAFC;
+    }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(51, 65, 85, 0.6);
+    }
+    .glow-emerald {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 border-b border-slate-800/80 bg-[#060B14]/90 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-400 to-teal-600 text-slate-950 font-black flex items-center justify-center text-lg shadow-lg">
+          EG
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold tracking-tight text-white text-base">EG · Enterprise AI & SaaS Studio</span>
+            <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 font-semibold">
+              Google Cloud Certified (ACE)
+            </span>
+          </div>
+          <p class="text-xs text-slate-400" id="nav-subtitle">
+            Agentes de IA en Producción, Automatización RGPD & Prototipado B2B en Días
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <!-- Language Toggle -->
+        <div class="bg-slate-900 border border-slate-700 rounded-lg p-1 flex items-center text-xs font-semibold">
+          <button id="btn-es" onclick="setLang('es')" class="px-2.5 py-1 rounded bg-emerald-500 text-slate-950 transition cursor-pointer">🇪🇸 ES</button>
+          <button id="btn-en" onclick="setLang('en')" class="px-2.5 py-1 rounded text-slate-400 hover:text-white transition cursor-pointer">🇬🇧 EN</button>
+        </div>
+
+        <a
+          href="https://www.malt.com/profile/joseenriquegarciacollado"
+          target="_blank"
+          id="nav-cta"
+          class="px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-xs transition shadow-md"
+        >
+          Contratar en Malt.es →
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden py-16 md:py-24 border-b border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-700 text-xs text-emerald-300 mb-6 font-medium">
+        <span>⚡</span>
+        <span id="hero-badge">Prototipo funcional navegable en 48–72 horas · Entrega final en 7–14 días</span>
+      </div>
+
+      <h1 id="hero-title" class="text-3xl md:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-4xl mb-6">
+        Transformamos procesos manuales en <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">Agentes de IA, Aplicaciones SaaS y Simuladores B2B</span> en días, no en meses.
+      </h1>
+
+      <p id="hero-desc" class="text-base md:text-lg text-slate-300 max-w-3xl leading-relaxed mb-8">
+        A diferencia de una consultora tradicional que pide 6 meses de proyecto o de un perfil técnico aislado del negocio, combinamos <strong>+12 años liderando estrategia digital y grandes cuentas tecnológicas (+70M€ en Big Tech / Google)</strong> con ingeniería Full-Stack asistida por IA (Next.js, TypeScript, SQL, Google Gemini / OpenAI API, Webhooks y Stripe).
+      </p>
+
+      <div class="flex flex-wrap items-center gap-4 mb-12">
+        <a
+          href="https://www.malt.com/profile/joseenriquegarciacollado"
+          target="_blank"
+          id="hero-btn-primary"
+          class="px-6 py-3.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-sm transition glow-emerald"
+        >
+          🚀 Solicitar Presupuesto en Malt (Pago Protegido Escrow)
+        </a>
+        <a
+          href="https://egarcia-enterprise.github.io/resolvedesk-ai-/"
+          target="_blank"
+          id="hero-btn-secondary"
+          class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm border border-slate-700 transition"
+        >
+          🤖 Probar Demo SaaS en Vivo (ResolveDesk AI) →
+        </a>
+      </div>
+
+      <!-- CREDENTIALS STRIP -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 border-t border-slate-800/80 text-xs">
+        <div class="glass-card rounded-xl p-4">
+          <div class="text-emerald-400 font-mono font-bold text-lg">48h – 72h</div>
+          <div class="text-slate-400 mt-0.5" id="stat-1">Primer prototipo interactivo con tu marca</div>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <div class="text-emerald-400 font-mono font-bold text-lg">100% RGPD / AEPD</div>
+          <div class="text-slate-400 mt-0.5" id="stat-2">Anonimización automática de DNI, CIF, IBAN y móvil</div>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <div class="text-emerald-400 font-mono font-bold text-lg">Google Cloud (ACE)</div>
+          <div class="text-slate-400 mt-0.5" id="stat-3">Arquitectura certificada + Máster en Big Data</div>
+        </div>
+        <div class="glass-card rounded-xl p-4">
+          <div class="text-emerald-400 font-mono font-bold text-lg">10+ Demos en Vivo</div>
+          <div class="text-slate-400 mt-0.5" id="stat-4">Código 100% en propiedad del cliente sin lock-in</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 PRODUCTIZED PACKAGES -->
+  <section class="py-16 border-b border-slate-800/70">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-10">
+        <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold" id="pkg-eyebrow">Soluciones Llave en Mano · Precio Cerrado</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-1" id="pkg-heading">¿Qué podemos construir e implantar para tu empresa en 1 a 2 semanas?</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- PACK 1 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-emerald-400">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-300 font-mono font-bold">PACK 01 · AGENTIC CX & RGPD</span>
+              <span class="text-slate-400 font-mono" id="p1-time">⏱️ 5–7 días</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" id="p1-title">Agentes IA de Triaje (WhatsApp / Email / Tickets) + Escudo RGPD</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4" id="p1-desc">
+              Automatiza hasta el 45% de las consultas repetitivas de atención al cliente, postventa o incidencias B2B cumpliendo al 100% con la normativa española de protección de datos.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 mb-6" id="p1-list">
+              <li>✓ <strong>Guardrail PII / RGPD:</strong> Enmascara DNI, NIE, CIF, IBAN y teléfonos antes de llamar a Gemini / OpenAI.</li>
+              <li>✓ <strong>Triaje Autónomo:</strong> Clasifica intención, sentimiento y prioridad SLA (1h / 4h / 24h).</li>
+              <li>✓ <strong>Agent Copilot:</strong> Genera borradores de respuesta listos para enviar en 1 clic.</li>
+              <li>✓ <strong>Conexión Webhook:</strong> Integración con Zendesk, HubSpot, Shopify o ERP.</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800">
+            <div class="flex items-baseline justify-between mb-3">
+              <span class="text-xs text-slate-400" id="p1-price-label">Inversión estimada:</span>
+              <span class="font-mono font-extrabold text-lg text-emerald-400">€1.800 – €3.200</span>
+            </div>
+            <a
+              href="https://egarcia-enterprise.github.io/resolvedesk-ai-/"
+              target="_blank"
+              class="block w-full text-center py-2.5 px-4 rounded-xl bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-500/40 font-bold text-xs transition"
+              id="p1-btn"
+            >
+              Ver Demo Funcional (ResolveDesk AI) →
+            </a>
+          </div>
+        </div>
+
+        <!-- PACK 2 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-cyan-400">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/15 text-cyan-300 font-mono font-bold">PACK 02 · B2B SALES & ROI</span>
+              <span class="text-slate-400 font-mono" id="p2-time">⏱️ 3–5 días</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" id="p2-title">Calculadoras Interactivas de ROI & Simuladores para Equipos de Ventas</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4" id="p2-desc">
+              Sustituye los PDFs y Excels estáticos de tu equipo comercial o agencia por una aplicación web interactiva con tu marca que calcula el Business Case en vivo delante del CFO.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 mb-6" id="p2-list">
+              <li>✓ <strong>Sliders Financieros en Vivo:</strong> Payback, ahorro de costes (TCO), margen e impacto anual.</li>
+              <li>✓ <strong>Personalización por Cliente:</strong> Adaptado a tus tarifas, productos y métricas sectoriales.</li>
+              <li>✓ <strong>Ideal para Agencias y B2B SaaS:</strong> Diferénciate en concursos (pitches) y propuestas ejecutivas.</li>
+              <li>✓ <strong>Despliegue Inmediato:</strong> Alojado en tu dominio o integrable en tu web corporativa.</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800">
+            <div class="flex items-baseline justify-between mb-3">
+              <span class="text-xs text-slate-400" id="p2-price-label">Inversión estimada:</span>
+              <span class="font-mono font-extrabold text-lg text-cyan-300">€1.200 – €2.400</span>
+            </div>
+            <a
+              href="https://egarcia-enterprise.github.io/egarcia-enterprise/"
+              target="_blank"
+              class="block w-full text-center py-2.5 px-4 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-500/40 font-bold text-xs transition"
+              id="p2-btn"
+            >
+              Explorar 9 Simuladores en Vivo →
+            </a>
+          </div>
+        </div>
+
+        <!-- PACK 3 -->
+        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-indigo-400">
+          <div>
+            <div class="flex items-center justify-between text-xs mb-3">
+              <span class="px-2.5 py-1 rounded bg-indigo-500/15 text-indigo-300 font-mono font-bold">PACK 03 · FULL-STACK MVP / SAAS</span>
+              <span class="text-slate-400 font-mono" id="p3-time">⏱️ 7–14 días</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2" id="p3-title">Prototipos Funcionales (MVP), Portales B2B & Micro-SaaS con Stripe</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4" id="p3-desc">
+              Lanza un producto digital B2B o una herramienta interna de operaciones completa con base de datos SQL, control de accesos por rol y cobros por suscripción o consumo.
+            </p>
+            <ul class="space-y-2 text-xs text-slate-300 mb-6" id="p3-list">
+              <li>✓ <strong>Arquitectura Multi-Tenant:</strong> Aislamiento de datos por empresa/cliente (`organization_id`).</li>
+              <li>✓ <strong>Seguridad Enterprise:</strong> Login SSO/RBAC (`ADMIN` vs `AGENT`) con cookies firmadas `HMAC-SHA256`.</li>
+              <li>✓ <strong>Monetización Integrada:</strong> Pasarela Stripe Checkout y Webhooks firmados.</li>
+              <li>✓ <strong>Stack Moderno:</strong> Next.js 16, React, TypeScript, SQLite/PostgreSQL y APIs REST.</li>
+            </ul>
+          </div>
+          <div class="pt-4 border-t border-slate-800">
+            <div class="flex items-baseline justify-between mb-3">
+              <span class="text-xs text-slate-400" id="p3-price-label">Inversión estimada:</span>
+              <span class="font-mono font-extrabold text-lg text-indigo-300">€2.800 – €4.900</span>
+            </div>
+            <a
+              href="https://github.com/egarcia-enterprise/resolvedesk-ai-"
+              target="_blank"
+              class="block w-full text-center py-2.5 px-4 rounded-xl bg-indigo-500/20 hover:bg-indigo-500/30 text-indigo-300 border border-indigo-500/40 font-bold text-xs transition"
+              id="p3-btn"
+            >
+              Inspeccionar Arquitectura en GitHub →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE ROI & PROJECT ESTIMATOR -->
+  <section class="py-16 border-b border-slate-800/70 bg-slate-950/60">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="mb-8">
+        <span class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-bold" id="calc-eyebrow">Calculadora de Impacto en Tiempo Real</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mt-1" id="calc-heading">Calcula el retorno financiero (ROI) de automatizar tu operativa con IA</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8 items-stretch">
+        <!-- Sliders -->
+        <div class="glass-card rounded-2xl p-6 space-y-5">
+          <div>
+            <div class="flex justify-between text-xs mb-2">
+              <span class="text-slate-300 font-semibold" id="lbl-vol">Volumen mensual de consultas / tickets / gestiones manuales:</span>
+              <span class="font-mono font-bold text-emerald-400" id="val-vol">3,500 / mes</span>
+            </div>
+            <input id="inp-vol" type="range" min="500" max="25000" step="500" value="3500" oninput="updateCalc()" class="w-full accent-emerald-400 cursor-pointer" />
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs mb-2">
+              <span class="text-slate-300 font-semibold" id="lbl-rate">Porcentaje automatizado / acelerado con Agente IA + Copilot:</span>
+              <span class="font-mono font-bold text-emerald-400" id="val-rate">40%</span>
+            </div>
+            <input id="inp-rate" type="range" min="15" max="70" step="5" value="40" oninput="updateCalc()" class="w-full accent-emerald-400 cursor-pointer" />
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs mb-2">
+              <span class="text-slate-300 font-semibold" id="lbl-cost">Coste operativo medio por gestión manual (tiempo de equipo):</span>
+              <span class="font-mono font-bold text-emerald-400" id="val-cost">€6.50</span>
+            </div>
+            <input id="inp-cost" type="range" min="2" max="15" step="0.5" value="6.5" oninput="updateCalc()" class="w-full accent-emerald-400 cursor-pointer" />
+          </div>
+
+          <div class="pt-3 border-t border-slate-800 text-[11px] text-slate-400" id="calc-note">
+            * El cálculo descuenta el coste estimado de inferencia de API (Google Gemini / OpenAI) y compara frente a una implantación llave en mano de €2.500.
+          </div>
+        </div>
+
+        <!-- Output Card -->
+        <div class="rounded-2xl bg-gradient-to-br from-emerald-950/90 via-slate-900 to-slate-950 border border-emerald-500/40 p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-emerald-300 font-bold" id="out-eyebrow">Ahorro Neto Anual Estimado para tu Empresa</span>
+            <div class="text-4xl md:text-5xl font-black text-white font-mono mt-2" id="out-savings">€99,120 / año</div>
+            <p class="text-xs text-slate-300 mt-2" id="out-sub">
+              Recuperas el 100% de la inversión del proyecto en el primer mes de uso.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3 my-6 pt-5 border-t border-emerald-500/20 text-xs">
+            <div>
+              <span class="text-slate-400 block" id="out-l1">Gestiones IA / mes</span>
+              <strong class="font-mono text-base text-emerald-300" id="out-v1">1,400</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block" id="out-l2">Horas liberadas / mes</span>
+              <strong class="font-mono text-base text-emerald-300" id="out-v2">233 h</strong>
+            </div>
+            <div>
+              <span class="text-slate-400 block" id="out-l3">Payback proyecto</span>
+              <strong class="font-mono text-base text-amber-300" id="out-v3">&lt; 18 días</strong>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="https://www.malt.com/profile/joseenriquegarciacollado"
+              target="_blank"
+              id="out-cta"
+              class="flex-1 text-center py-3 px-4 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs transition"
+            >
+              Reservar Prototipo en 48h a través de Malt →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-10 text-center text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-6 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <strong class="text-slate-300">EG · Enterprise AI & SaaS Studio</strong> · Google Cloud Certified (ACE) · Madrid / Sevilla / Remote
+      </div>
+      <div class="flex items-center gap-5">
+        <a href="https://egarcia-enterprise.github.io/resolvedesk-ai-/" target="_blank" class="text-emerald-400 hover:underline">ResolveDesk AI Demo</a>
+        <a href="https://egarcia-enterprise.github.io/egarcia-enterprise/" target="_blank" class="text-emerald-400 hover:underline">9 ROI Simulators Hub</a>
+        <a href="https://www.malt.com/profile/joseenriquegarciacollado" target="_blank" class="text-emerald-400 hover:underline">Malt Profile</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function updateCalc() {
+      const vol = Number(document.getElementById('inp-vol').value);
+      const rate = Number(document.getElementById('inp-rate').value);
+      const cost = Number(document.getElementById('inp-cost').value);
+
+      document.getElementById('val-vol').textContent = vol.toLocaleString() + ' / mes';
+      document.getElementById('val-rate').textContent = rate + '%';
+      document.getElementById('val-cost').textContent = '€' + cost.toFixed(2);
+
+      const automatedMonthly = Math.round(vol * (rate / 100));
+      const netPerTicket = Math.max(0.5, cost - 0.60);
+      const monthlySavings = automatedMonthly * netPerTicket;
+      const annualSavings = Math.round(monthlySavings * 12);
+      const hoursSaved = Math.round((automatedMonthly * 10) / 60);
+      const paybackDays = Math.max(5, Math.round((2500 / monthlySavings) * 30));
+
+      document.getElementById('out-savings').textContent = '€' + annualSavings.toLocaleString() + ' / Yr';
+      document.getElementById('out-v1').textContent = automatedMonthly.toLocaleString();
+      document.getElementById('out-v2').textContent = hoursSaved.toLocaleString() + ' h';
+      document.getElementById('out-v3').textContent = paybackDays + ' d';
+    }
+
+    const I18N = {
+      es: {
+        'nav-subtitle': 'Agentes de IA en Producción, Automatización RGPD & Prototipado B2B en Días',
+        'nav-cta': 'Contratar en Malt.es →',
+        'hero-badge': 'Prototipo funcional navegable en 48–72 horas · Entrega final en 7–14 días',
+        'hero-title': 'Transformamos procesos manuales en <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">Agentes de IA, Aplicaciones SaaS y Simuladores B2B</span> en días, no en meses.',
+        'hero-desc': 'A diferencia de una consultora tradicional que pide 6 meses de proyecto o de un perfil técnico aislado del negocio, combinamos <strong>+12 años liderando estrategia digital y grandes cuentas tecnológicas (+70M€ en Big Tech / Google)</strong> con ingeniería Full-Stack asistida por IA (Next.js, TypeScript, SQL, Google Gemini / OpenAI API, Webhooks y Stripe).',
+        'hero-btn-primary': '🚀 Solicitar Presupuesto en Malt (Pago Protegido Escrow)',
+        'hero-btn-secondary': '🤖 Probar Demo SaaS en Vivo (ResolveDesk AI) →',
+        'pkg-eyebrow': 'Soluciones Llave en Mano · Precio Cerrado',
+        'pkg-heading': '¿Qué podemos construir e implantar para tu empresa en 1 a 2 semanas?',
+        'calc-eyebrow': 'Calculadora de Impacto en Tiempo Real',
+        'calc-heading': 'Calcula el retorno financiero (ROI) de automatizar tu operativa con IA',
+        'out-eyebrow': 'Ahorro Neto Anual Estimado para tu Empresa',
+        'out-cta': 'Reservar Prototipo en 48h a través de Malt →'
+      },
+      en: {
+        'nav-subtitle': 'Production AI Agents, GDPR Automation & Custom B2B SaaS in Days',
+        'nav-cta': 'Hire on Malt →',
+        'hero-badge': 'Interactive clickable prototype in 48–72 hours · Full delivery in 7–14 days',
+        'hero-title': 'We turn manual bottlenecks into <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-300">Production AI Agents, Custom B2B SaaS & ROI Simulators</span> in days, not months.',
+        'hero-desc': 'Unlike traditional agencies quoting 6-month timelines or isolated developers who miss the business case, we combine <strong>12+ years of enterprise technology strategy (€70M+ portfolios at Google)</strong> with modern AI-assisted Full-Stack engineering (Next.js, TypeScript, SQL, Google Gemini / OpenAI APIs, Webhooks, and Stripe).',
+        'hero-btn-primary': '🚀 Request a Proposal on Malt (Escrow Protected)',
+        'hero-btn-secondary': '🤖 Launch Live SaaS Demo (ResolveDesk AI) →',
+        'pkg-eyebrow': 'Productized Turnkey Packages · Fixed Scope',
+        'pkg-heading': 'What we can architect and deploy for your company in 1 to 2 weeks',
+        'calc-eyebrow': 'Live Financial Impact Calculator',
+        'calc-heading': 'Quantify the annual ROI of automating your operations with Agentic AI',
+        'out-eyebrow': 'Estimated Annual Net Savings',
+        'out-cta': 'Book Your 48h Prototype via Malt →'
+      }
+    };
+
+    function setLang(lang) {
+      const dict = I18N[lang];
+      Object.keys(dict).forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.innerHTML = dict[id];
+      });
+      document.getElementById('btn-es').className = lang === 'es'
+        ? 'px-2.5 py-1 rounded bg-emerald-500 text-slate-950 transition cursor-pointer'
+        : 'px-2.5 py-1 rounded text-slate-400 hover:text-white transition cursor-pointer';
+      document.getElementById('btn-en').className = lang === 'en'
+        ? 'px-2.5 py-1 rounded bg-emerald-500 text-slate-950 transition cursor-pointer'
+        : 'px-2.5 py-1 rounded text-slate-400 hover:text-white transition cursor-pointer';
+    }
+
+    updateCalc();
+  </script>
+</body>
+</html>
